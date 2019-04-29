@@ -1,0 +1,188 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "get soundsgood",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": ["cancel"]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": ["help"]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": ["Seeya", "Goodbye"]
+        },
+        {
+          "name": "AnalyzeFeelingIntent",
+          "slots": [
+            {
+              "name": "feeling",
+              "type": "FEELING"
+            }
+          ],
+          "samples": [
+            "my mood is {feeling}",
+            "I am {feeling}",
+            "I feel {feeling}",
+            "I feel like {feeling}"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ResumeIntent",
+          "samples": []
+        },
+        {
+          "name": "GenreIntent",
+          "slots": [
+            {
+              "name": "genre",
+              "type": "AMAZON.MusicCreativeWorkType"
+            }
+          ],
+          "samples": [
+            "I like to listen to some {genre}",
+            "I like to listen to {genre}",
+            "genre",
+            "I like {genre}"
+          ]
+        },
+        {
+          "name": "SongIntent",
+          "slots": [
+            {
+              "name": "song",
+              "type": "AMAZON.MusicCreativeWorkType"
+            }
+          ],
+          "samples": [
+            "I want {song}",
+            "song",
+            "I want something like {song}",
+            "I want to listen to something like {song}"
+          ]
+        },
+        {
+          "name": "SurpriseMeIntent",
+          "slots": [],
+          "samples": ["surprise me"]
+        },
+        {
+          "name": "FetchMusicIntent",
+          "slots": [],
+          "samples": ["go ahead"]
+        },
+        {
+          "name": "FetchMusicTwoIntent",
+          "slots": [],
+          "samples": ["get music"]
+        },
+        {
+          "name": "AMAZON.RepeatIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NextIntent",
+          "samples": []
+        },
+        {
+          "name": "PlayStreamIntent",
+          "slots": [],
+          "samples": ["play music"]
+        }
+      ],
+      "types": [
+        {
+          "name": "FEELING",
+          "values": [
+            {
+              "name": {
+                "value": "not so good"
+              }
+            },
+            {
+              "name": {
+                "value": "soso"
+              }
+            },
+            {
+              "name": {
+                "value": "bad"
+              }
+            },
+            {
+              "name": {
+                "value": "great"
+              }
+            }
+          ]
+        },
+        {
+          "name": "AMAZON.Artist",
+          "values": [
+            {
+              "name": {
+                "value": "linkin park"
+              }
+            },
+            {
+              "name": {
+                "value": "madonna"
+              }
+            },
+            {
+              "name": {
+                "value": "drake"
+              }
+            }
+          ]
+        },
+        {
+          "name": "AMAZON.MusicCreativeWorkType",
+          "values": [
+            {
+              "name": {
+                "value": "k-pop"
+              }
+            },
+            {
+              "name": {
+                "value": "easy listening"
+              }
+            },
+            {
+              "name": {
+                "value": "jazz"
+              }
+            },
+            {
+              "name": {
+                "value": "hard rock"
+              }
+            },
+            {
+              "name": {
+                "value": "hip hop"
+              }
+            },
+            {
+              "name": {
+                "value": "country"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
