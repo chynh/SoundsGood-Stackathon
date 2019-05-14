@@ -13,15 +13,20 @@ const LaunchRequestHandler = {
   handle(handlerInput) {
     const speechText =
       'Hello, Welcome to soundsgood. I can help you find some good music that suits your mood. Please tell me how you feel today? You can say something like, I feel great, or I am not in a good mood';
-    const repromptText = 'Can you tell me your name?';
+    const repromptText =
+      'You can say something like, I feel great, or I am not in a good mood';
     const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
     sessionAttributes.launched = true;
     handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
+    handlerInput.responseBuilder.withStandardCard(
+      'Welcome to Sounds Good',
+      'Help me find you some good music',
+      'https://source.unsplash.com/300x300/?music'
+    );
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(repromptText)
-      .withSimpleCard('Welcome to Sounds Good', "It's gonna be good.")
       .getResponse();
   }
 };
@@ -54,11 +59,11 @@ const AnalyzeFeelingIntentHandler = {
       sessionAttributes.mood = 'bad';
       handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
     }
+    handlerInput.responseBuilder.withSimpleCard('Please Tell me your mood.');
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Help me find you some good music')
       .getResponse();
   }
 };
@@ -410,32 +415,3 @@ exports.handler = skillBuilder
   .withTableName('alexa-data')
   .withAutoCreateTable(true)
   .lambda();
-
-// const metadata = {
-//   title: 'My opinion: how could you diss-a-brie?',
-//   subtitle: 'Vince Fontana',
-//   art: {
-//     sources: [
-//       {
-//         url:
-//           'https://cdn.example.com/url-of-the-skill-image/brie-album-art.png'
-//       }
-//     ]
-//   },
-//   backgroundImage: {
-//     sources: [
-//       {
-//         url:
-//           'https://cdn.example.com/url-of-the-skill-image/brie-background.png'
-//       }
-//     ]
-//   }
-// };
-
-// ||
-//         handlerInput.requestEnvelope.request.intent.name ===
-//           'AMAZON.ResumeIntent' ||
-//         handlerInput.requestEnvelope.request.intent.name ===
-//           'AMAZON.NextIntent' ||
-//         handlerInput.requestEnvelope.request.intent.name ===
-//           'AMAZON.PreviousIntent'

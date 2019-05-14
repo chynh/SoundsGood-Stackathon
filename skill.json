@@ -35,14 +35,8 @@
           "largeIconUri": "https://s3.amazonaws.com/cdn.dabblelab.com/img/skill-template-default-lg.png",
           "summary": "Sample Short Description",
           "description": "Sample Full Description",
-          "examplePhrases": [
-            "Alexa open SoundsGood"
-          ],
-          "keywords": [
-            "keyword1",
-            "keyword2",
-            "keyword3"
-          ]
+          "examplePhrases": ["Alexa open SoundsGood", "Alexa get SoundsGood"],
+          "keywords": ["soundsgood", "soundgood"]
         }
       },
       "isAvailableWorldwide": true,
